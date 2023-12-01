@@ -11,6 +11,7 @@ calibration string = read [head digits, last digits]
 
 main :: IO ()
 main = do
-  let ex = ["1abc2", "pqr3stu8vwx", "a1b2c3d4e5f", "treb7uchet"]
-  let res = trebuchet ex
-  putStrLn $ "Sum of calibration values: " ++ show res
+  content <- readFile "input.txt"
+  let input = lines content
+  let resInput = trebuchet input
+  putStrLn $ "Sum of calibration values: " ++ show resInput
